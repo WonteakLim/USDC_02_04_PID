@@ -1,6 +1,8 @@
 #ifndef PID_H
 #define PID_H
 
+#include <vector>
+
 class PID {
 public:
   /*
@@ -13,6 +15,7 @@ public:
   /*
   * Coefficients
   */ 
+
   double Kp_;
   double Ki_;
   double Kd_;
@@ -21,6 +24,20 @@ public:
   * Ctrl Cmd
   */
   double cmd_;
+
+  /*
+  * Twiddle
+  */
+  bool is_twiddle_;
+  int window_size_;
+  int window_step_;
+  int update_param_index_;
+  int update_subiter_;
+  double total_error_;
+
+  int num_param_;
+  std::vector<double> p;
+  std::vector<double> dp;
 
   /*
   * Constructor
