@@ -31,9 +31,11 @@ public:
   bool is_twiddle_;
   int window_size_;
   int window_step_;
-  int update_param_index_;
+  int update_index_;
   int update_subiter_;
   double total_error_;
+  double best_error_;
+  int iteration_;
 
   int num_param_;
   std::vector<double> p;
